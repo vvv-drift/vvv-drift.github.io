@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pooling Grid Calculator v1.7</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-side" align="center">
+			<h2 align="center">Pooling Visualiser</h2>
+			<p>Hello and welcome to my yarn colour pooling visualiser/calculator. Please keep in mind this may recieve updates over time, feedback and testing is welcome!</p>
+			<p><b><u>All measurements are in CM!</u></b></p>
+			<div class="setting" align="center">
+				<h3>Stitch Type/Length</h3>
+				<div class="checkbox-group">
+					<label class="checkbox-label button-89">
+						<input type="radio" name="firstSetting" value="1" id="option1">
+							<!-- Originally had 100x100 images for diagrams cuz thought itd look better but it was messy, revise later -->
+							<span>Single Crochet</span>
+						<!-- <img src="https://marketplace.squiz.net/__data/assets/image/0014/22028/100x100.jpg" alt="Unselected Checkbox" class="checkbox-image"> -->
+					</label>
+					<label class="checkbox-label button-89">
+						<input type="radio" name="firstSetting" value="2" id="option2">
+							<span>Granny Stitch</span>
+						<!-- <img src="https://marketplace.squiz.net/__data/assets/image/0014/22028/100x100.jpg" alt="Unselected Checkbox" class="checkbox-image"> -->
+					</label>
+					<label class="checkbox-label button-89">
+						<input type="radio" name="firstSetting" value="3" id="option3">
+							<span>Custom Stitch Length</span>
+							<input type="number" id="customValue" placeholder="CM">
+					</label>
+				</div>
+				<p>Single Crochet assumes 1cm of yarn length per stitch, granny stitch assumes 2cm. This does not account for hook size or yarn weight, for the most accurate calculation please measure the length of yarn used in one stitch of your project and enter that into the third option.</p>
+			</div>
+			<hr/>
+			<!-- Set to non-display till I can figure this nightmare out -->
+			<div class="setting" style="display:none;">
+				<h3>Hook Size</h3>
+				<input type="number" step="0.01" placeholder="Enter decimal number" id="secondSetting">
+			</div>
+			<div class="setting" style="display:none;">
+				<h3>Yarn Weight</h3>
+				<input type="number" step="1" placeholder="Enter whole number" id="thirdSetting">
+			</div>
+			<div class="setting" align="center">
+				<h3>Colours & Lengths</h3>
+				<p>Enter the length of each colour segment in CM below, the box beside each input has a colour picker to appropriately colour the square in the visualiser.</p>
+				<p>Please be sure to enter the amount of colours present first, as changing this value will wipe any colour data previously entered.</p>
+				<label for="amount">Amount of Colours:</label>
+				<input type="number" step="1" min="2" value="2" id="amount"><br/>
+				<div class="sub-settings"></div><br/>
+				<button id="calculateButton">Submit</button>
+			</div>
+		</div>
+        <div class="right-side">
+            <div class="controls" align="center">
+                <label for="width">Grid Width:</label>
+                <input type="number" id="width" min="1" value="10">
+                <label for="height">Grid Height:</label>
+                <input type="number" id="height" min="1" value="20"><br/><br/>
+                <button id="generateGrid">Generate Grid</button>
+            </div><br/>
+            <div class="grid"></div><br/>
+			<div class="result-container">
+                <!-- ... Text results here for stitch count per colour ... -->
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
