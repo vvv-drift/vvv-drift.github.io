@@ -1,0 +1,230 @@
+/* Import fonts and body styles */
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Ysabeau+SC&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    background: url('https://www.toptal.com/designers/subtlepatterns/uploads/prism.png');
+    font-family: 'Ysabeau SC', sans-serif;
+}
+
+/* Adjustments for mobile screens */
+@media screen and (max-width: 768px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+	
+	.checkbox-group {
+		display: flex;
+		align-items: stretch;
+		flex-direction: column;
+	}
+
+    .container {
+        flex-direction: column;
+    }
+
+    .left-side {
+        width: 100%; /* Full width on mobile */
+        padding: 10px; /* Add padding for better mobile appearance */
+        overflow-y: auto;
+        margin-top: 0; /* Remove margin-top */
+    }
+
+    .right-side {
+        width: 100%; /* Full width on mobile */
+        align-items: flex-start; /* Align content to the left on mobile */
+    }
+
+    .grid {
+        margin: 0 auto; /* Center the grid horizontally */
+    }
+
+    .grid div {
+        width: 20px; /* Smaller size for better mobile display */
+        height: 20px; /* Smaller size for better mobile display */
+        font-size: 12px; /* Smaller font size for better mobile readability */
+        border: none; /* Remove border to reduce visual noise on mobile */
+    }
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.result-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.result-container div {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.color-box {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.left-side {
+    flex: 1;
+    color: white;
+    padding-left: 10px;
+	margin-right: 10px;
+    box-sizing: border-box;
+	overflow: visible;
+	margin-top: -20px;
+	overflow-y: auto;
+}
+
+.right-side {
+    flex: 2;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	overflow-y: auto;
+}
+
+h2, h3 {
+    color: white;
+	font-family: 'Ysabeau SC', sans-serif;
+}
+
+.setting {
+    margin-bottom: 20px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: stretch;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+	background-color: #D94625;
+	padding: 5px;
+}
+
+.checkbox-image {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#secondSetting, #thirdSetting, #amount {
+    width: 50px;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.sub-settings {
+    margin-top: 10px;
+}
+
+.sub-settings div {
+	display: flex;
+	margin: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+input[type="number"] {
+    width: 50px;
+    padding: 5px;
+	color: #fff;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0);
+	border: 2px solid #fff;
+	border-radius: 20px;
+}
+
+input[type="color"] {
+	-webkit-appearance: none;
+	border: none;
+	width: 32px;
+	height: 32px;
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* CSS */
+.button-89 {
+  --b: 3px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: #fff;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-89:hover,
+.button-89:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+  cursor: pointer;
+}
+
+.button-89:active {
+  background: var(--color);
+  color: #fff;
+}
+
+.grid {
+    display: grid;
+    grid-gap: 0;
+	transform: rotate(180deg);
+}
+
+.grid div {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+	color: rgba(255, 255, 255, 0); /* Currently set to invisible since any number over 999 causes too much visual noise */
+	border: 1px solid rgba(0, 0, 0, 0.5);
+}
